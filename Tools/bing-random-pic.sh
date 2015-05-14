@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# -*- coding: utf8 -*-
+# -*- coding: utf-8 -*-
 
 # Author: Hwasung Lee
 
@@ -36,3 +36,8 @@ ln -f "${PICTURE_DIR}/${filename}" "${PICTURE_DIR}/today.jpg"
 echo 'Randomly selecting a picture and linking it to random.jpg'
 ln -f $(ls ${PICTURE_DIR}/*_*.jpg | grep -v ${filename} | gshuf -n 1) \
   "${PICTURE_DIR}/random.jpg"
+
+OSX_LOCK_SCREEN_FILE="/Library/Caches/com.apple.desktop.admin.png"
+echo 'Link random.jpg to lock screen'
+ln -f "${PICTURE_DIR}/random.jpg" "$OSX_LOCK_SCREEN_FILE"
+
