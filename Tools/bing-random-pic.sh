@@ -38,6 +38,8 @@ ln -f $(ls ${PICTURE_DIR}/*_*.jpg | grep -v ${filename} | gshuf -n 1) \
   "${PICTURE_DIR}/random.jpg"
 
 OSX_LOCK_SCREEN_FILE="/Library/Caches/com.apple.desktop.admin.png"
+echo "Backup lock screen file $OSX_LOCK_SCREEN_FILE"
+mv $OSX_LOCK_SCREEN_FILE ${OSX_LOCK_SCREEN_FILE}.bak
 echo 'Link random.jpg to lock screen'
-ln -f "${PICTURE_DIR}/random.jpg" "$OSX_LOCK_SCREEN_FILE"
+ln "${PICTURE_DIR}/random.jpg" "$OSX_LOCK_SCREEN_FILE"
 
